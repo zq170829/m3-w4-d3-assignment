@@ -1,0 +1,30 @@
+{
+  "name": "m3-w4-d3-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zq170829/m3-w4-d3-assignment.git"
+  },
+  "author": "Qi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zq170829/m3-w4-d3-assignment/issues"
+  },
+  "homepage": "https://github.com/zq170829/m3-w4-d3-assignment#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.13.0",
+    "http-auth": "^4.1.9",
+    "mongoose": "^6.0.13",
+    "path": "^0.12.7",
+    "pug": "^3.0.2",
+    "sass": "^1.43.4"
+  }
+}

@@ -12,3 +12,5 @@ const registrationSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Registration', registrationSchema);
+
+//qizhang 12345678
