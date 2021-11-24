@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "watch": "nodemon ./start.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,8 +24,14 @@
     "express-validator": "^6.13.0",
     "http-auth": "^4.1.9",
     "mongoose": "^6.0.13",
+    "onchange": "^7.1.0",
     "path": "^0.12.7",
     "pug": "^3.0.2",
     "sass": "^1.43.4"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1",
+    "node-sass": "^4.14.1",
+    "parallelshell": "^3.0.1"
   }
 }
