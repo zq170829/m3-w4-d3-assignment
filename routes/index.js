@@ -11,13 +11,12 @@ const basic = auth.basic({
 });
 
 router.get('/', (req, res) => {
-  //res.send('It works!');
-  res.render('index', { title: 'HomePage' });
+  // res.send('It works!');
+  res.render('index.pug', { title: 'HomePage' });
 });
 
 router.get('/register', (req, res) => {
-  //res.send('It works!');
-  res.render('register', { title: 'RegistrationPage' });
+  res.render('register.pug', { title: 'RegistrationPage' });
 });
 
 router.get('/registrations', basic.check((req, res) => {
@@ -38,12 +37,22 @@ router.post('/',
         check('email')
         .isLength({ min: 1 })
         .withMessage('Please enter an email'),
+        check('username')
+        .isLength({min:1})
+        .withMessage('Please enter a username'),
+        check('password')
+        .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d@$.!%*#?&]/)
+        .withMessage('Please make sure password contains at least one number,lowercase letters, uppercase letter, and a special character'),
     ],
     (req, res) => {
         //console.log(req.body);
         const errors = validationResult(req);
         if (errors.isEmpty()) {
           const registration = new Registration(req.body);
+          //generate salt to hash password
+          // const salt = await bcrypt.genSalt(10);
+          //set user password to hashed password
+          // registration.password = await bcrypt.hash(registration.password, salt);
           registration.save()
             .then(() => {res.send('Thank you for your registration!');})
             .catch((err) => {

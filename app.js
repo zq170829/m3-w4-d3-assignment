@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(express.static('public'));
+app.use(express.static('public'));//To serve static files such as images, CSS files, and JavaScript files, use the express.static built-in middleware function in Express.
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
